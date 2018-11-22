@@ -15,7 +15,6 @@ public class GamePresenter : MonoBehaviour
 	
     private void InitEventHandler()
     {
-        View.OnGoToTitle.Subscribe(_ => LoadTitle()).AddTo(this);
     }
 
     private void LoadTitle()
