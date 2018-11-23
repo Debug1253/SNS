@@ -4,7 +4,10 @@ using UnityEngine.UI;
 
 using UniRx;
 
-public class GameView : MonoBehaviour
+namespace sns.Game
 {
+    public class GameView : MonoBehaviour
+    {
 
+    }
 }

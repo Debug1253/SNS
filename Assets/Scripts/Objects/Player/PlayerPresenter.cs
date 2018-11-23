@@ -3,10 +3,13 @@ using sns.InputEvent;
 
 using UniRx;
 
-public class PlayerPresenter : MonoBehaviour
+namespace sns.Player
 {
-    private void Start()
+    public class PlayerPresenter : MonoBehaviour
     {
+        private void Start()
+        {
 
+        }
     }
 }

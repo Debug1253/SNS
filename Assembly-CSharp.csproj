@@ -65,7 +65,8 @@
     <Compile Include="Assets\Scripts\Common\InputEvent\InputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\KeyBoardInputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\TouchInputEvent.cs" />
-    <Compile Include="Assets\Scripts\Common\SceneNameModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Scene\SceneNameModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Scene\SceneService.cs" />
     <Compile Include="Assets\Scripts\Game\GamePresenter.cs" />
     <Compile Include="Assets\Scripts\Game\GameView.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuPresenter.cs" />
