@@ -1,37 +1,24 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+using sns.Scene;
 
 using UniRx;
 
-[RequireComponent(typeof(StageView))]
-public class StagePresenter : MonoBehaviour
+namespace sns.StageSelect
 {
-    private StageView View { get { return GetComponent<StageView>(); } }
-
-	void Start ()
+    [RequireComponent(typeof(StageView))]
+    public class StagePresenter : MonoBehaviour
     {
-        InitEventHandler();
-    }
+        private StageView View { get { return GetComponent<StageView>(); } }
 
-    private void InitEventHandler()
-    {
-        View.OnLevelButton
-            .Subscribe(level =>
-            {
-                SetLevel(level);
-                LoadGame();
-            }).AddTo(this);
-    }
+        void Start()
+        {
+            InitEventHandler();
+        }
 
-    private void SetLevel(int level)
-    {
-        // NOTE: 나중에 Level을 저장하고 게임씬에서 취득할 수 있도록 기능 추가 필요.
-        Debug.Log(level);
-    }
-
-    private void LoadGame()
-    {
-        // NOTE: 씬관리하는 클래스를 작성하고 싶다.
-        SceneManager.LoadScene(SceneNameModel.Game);
+        private void InitEventHandler()
+        {
+            // FIXME: 스테이지 선택 기능 추가
+            View.OnLevelButton.Subscribe(level => SceneService.Instance.LoadGame(0, level)).AddTo(this);
+        }
     }
 }

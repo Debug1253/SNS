@@ -3,24 +3,21 @@ using UnityEngine.SceneManagement;
 
 using UniRx;
 
-[RequireComponent(typeof(GameView))]
-public class GamePresenter : MonoBehaviour
+namespace sns.Game
 {
-    private GameView View { get { return GetComponent<GameView>(); } }
+    [RequireComponent(typeof(GameView))]
+    public class GamePresenter : MonoBehaviour
+    {
+        private GameView View { get { return GetComponent<GameView>(); } }
 
-	void Start ()
-    {
-        InitEventHandler();
-    }
-	
-    private void InitEventHandler()
-    {
-        View.OnGoToTitle.Subscribe(_ => LoadTitle()).AddTo(this);
-    }
+        void Start()
+        {
+            InitEventHandler();
+        }
 
-    private void LoadTitle()
-    {
-        // NOTE: 씬관리하는 클래스를 작성하고 싶다.
-        SceneManager.LoadScene(SceneNameModel.Title);
+        private void InitEventHandler()
+        {
+
+        }
     }
 }

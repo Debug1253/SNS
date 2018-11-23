@@ -1,28 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using sns.Scene;
 
 using UniRx;
 
-[RequireComponent(typeof(TitleSceneView))]
-public class TitleScenePresenter : MonoBehaviour
+namespace sns.Title
 {
-    private TitleSceneView View { get { return GetComponent<TitleSceneView>(); } }
-
-	void Start ()
+    [RequireComponent(typeof(TitleSceneView))]
+    public class TitleScenePresenter : MonoBehaviour
     {
-        InitEventHandler();
-    }
+        private TitleSceneView View { get { return GetComponent<TitleSceneView>(); } }
 
-    private void InitEventHandler()
-    {
-        View.OnTap.Where(onTap => onTap)
-            .Subscribe(_ => LoadMainMenu())
-            .AddTo(this);
-    }
+        void Start()
+        {
+            InitEventHandler();
+        }
 
-    private void LoadMainMenu()
-    {
-        // NOTE: 씬관리하는 클래스를 작성하고 싶다.
-        SceneManager.LoadScene(SceneNameModel.MainMenu);
+        private void InitEventHandler()
+        {
+            View.OnTap.Where(onTap => onTap).Subscribe(_ => SceneService.Instance.LoadMainMenu()).AddTo(this);
+        }
     }
 }

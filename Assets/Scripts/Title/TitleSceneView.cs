@@ -1,9 +1,11 @@
 ﻿using System;
 using UnityEngine;
+using sns.InputEvent;
 
-using UniRx;
-
-public class TitleSceneView : MonoBehaviour
+namespace sns.Title
 {
-    public IObservable<bool> OnTap { get { return Observable.EveryUpdate().Select(_ => Input.GetMouseButtonUp(0)).DistinctUntilChanged(); } }
+    public class TitleSceneView : MonoBehaviour
+    {
+        public IObservable<bool> OnTap { get { return InputEventService.Instance.GetInputEvent().OnTap(); } }
+    }
 }

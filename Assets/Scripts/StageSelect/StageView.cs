@@ -6,28 +6,31 @@ using UnityEngine.UI;
 
 using UniRx;
 
-public class StageView : MonoBehaviour
+namespace sns.StageSelect
 {
-    [SerializeField] private List<Button> levelButtons;
-
-    private Subject<int> onLevelButton = new Subject<int>();
-
-    public IObservable<int> OnLevelButton { get { return onLevelButton; } }
-
-    private void Start()
+    public class StageView : MonoBehaviour
     {
-        InitEvent();
-    }
+        [SerializeField] private List<Button> levelButtons;
 
-    private void InitEvent()
-    {
-        levelButtons.Select((button, index) => new { button, index })
-            .ToList()
-            .ForEach(vo =>
-            {
-                vo.button.OnClickAsObservable()
-                    .Subscribe(_ => onLevelButton.OnNext(vo.index))
-                    .AddTo(this);
-            });
+        private Subject<int> onLevelButton = new Subject<int>();
+
+        public IObservable<int> OnLevelButton { get { return onLevelButton; } }
+
+        private void Start()
+        {
+            InitEvent();
+        }
+
+        private void InitEvent()
+        {
+            levelButtons.Select((button, index) => new { button, index })
+                .ToList()
+                .ForEach(vo =>
+                {
+                    vo.button.OnClickAsObservable()
+                        .Subscribe(_ => onLevelButton.OnNext(vo.index))
+                        .AddTo(this);
+                });
+        }
     }
 }

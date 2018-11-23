@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 using UniRx;
 
-public class GameView : MonoBehaviour
+namespace sns.Game
 {
-    [SerializeField] private Button goToTitleButton; // NOTE: 더미
+    public class GameView : MonoBehaviour
+    {
 
-    public IObservable<Unit> OnGoToTitle { get { return goToTitleButton.OnClickAsObservable(); } }
+    }
 }
