@@ -69,9 +69,11 @@
     <Compile Include="Assets\Scripts\Common\Scene\SceneService.cs" />
     <Compile Include="Assets\Scripts\Game\GamePresenter.cs" />
     <Compile Include="Assets\Scripts\Game\GameView.cs" />
+    <Compile Include="Assets\Scripts\Game\Objects\Player\PlayerModel.cs" />
+    <Compile Include="Assets\Scripts\Game\Objects\Player\PlayerPresenter.cs" />
+    <Compile Include="Assets\Scripts\Game\Objects\Player\PlayerView.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuPresenter.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuView.cs" />
-    <Compile Include="Assets\Scripts\Objects\Player\PlayerPresenter.cs" />
     <Compile Include="Assets\Scripts\StageSelect\StagePresenter.cs" />
     <Compile Include="Assets\Scripts\StageSelect\StageView.cs" />
     <Compile Include="Assets\Scripts\Title\TitleScenePresenter.cs" />
