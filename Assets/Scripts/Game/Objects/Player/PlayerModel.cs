@@ -4,19 +4,12 @@ using UnityEngine;
 
 namespace sns.Player
 {
-    public enum State
-    {
-        Await,
-        Run,
-        Jump,
-    }
-
     public class PlayerModel
     {
         private float moveSpeed;
         private float jumpPower;
         private Rigidbody2D rigid;
-        public State state;
+        private bool isGround = false;
 
         public PlayerModel(Rigidbody2D rigid, float moveSpeed, float jumpPower)
         {
@@ -25,23 +18,26 @@ namespace sns.Player
             this.jumpPower = jumpPower;
         }
 
+		// NOTE: 명령패턴을 쓸까 말까 고민 중
         public void Move(float amount)
         {
-            var velocity = new Vector2(amount * moveSpeed, rigid.velocity.y);
             var dir = amount > 0 ? 0 : Mathf.PI * Mathf.Rad2Deg;
-            rigid.velocity = velocity;
+            rigid.transform.localPosition += Vector3.right * amount * moveSpeed * Time.deltaTime;
             rigid.transform.localEulerAngles = Vector3.up * dir;
         }
 
         public void Jump()
         {
-            // FIXME: 무한점프 방지
+            if (!isGround)
+                return;
+
             rigid.velocity += Vector2.up * jumpPower;
+            isGround = false;
         }
 
-        public void SetState(State state)
+        public void Landing()
         {
-            this.state = state;
+            this.isGround = true;
         }
     }
 }
