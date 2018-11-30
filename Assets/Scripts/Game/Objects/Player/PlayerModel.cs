@@ -22,7 +22,8 @@ namespace sns.Player
         public void Move(float amount)
         {
             var dir = amount > 0 ? 0 : Mathf.PI * Mathf.Rad2Deg;
-            rigid.transform.localPosition += Vector3.right * amount * moveSpeed * Time.deltaTime;
+            var velocity = new Vector2(amount * moveSpeed, rigid.velocity.y);
+            rigid.velocity = velocity;
             rigid.transform.localEulerAngles = Vector3.up * dir;
         }
 
