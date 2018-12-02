@@ -1,6 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
+using sns.Character;
+using sns.Data;
 
 using UniRx;
 
@@ -10,6 +11,9 @@ namespace sns.MainMenu
     public class CharaSelectDialogPresenter : MonoBehaviour
     {
         private CharaSelectDialogView View { get { return GetComponent<CharaSelectDialogView>(); } }
+
+        private Subject<Unit> onClose = new Subject<Unit>(); 
+        public IObservable<Unit> OnClose { get { return onClose; } }
 
         void Start()
         {
@@ -25,7 +29,7 @@ namespace sns.MainMenu
         {
             View.OnCharaSelect.Subscribe(chara =>
             {
-                SaveCharaData();
+                SaveCharaData(chara);
                 Close();
             }).AddTo(this);
         }
@@ -38,11 +42,13 @@ namespace sns.MainMenu
         private void Close()
         {
             gameObject.SetActive(false);
+
+            onClose.OnNext(Unit.Default);
         }
 
-        private void SaveCharaData()
+        private void SaveCharaData(CharaType type)
         {
-            // NOTE: 데이터 보존 필요
+            DataService.Instance.SaveCurrentChara(type);
         }
     }
 }

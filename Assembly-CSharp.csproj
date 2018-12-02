@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ExpectResources\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
-    <Compile Include="Assets\Scripts\Common\Chara\CharaModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Chara\CharacterModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Chara\CharactersModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Data\DataModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Data\DataService.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\IInputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\InputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\KeyBoardInputEvent.cs" />

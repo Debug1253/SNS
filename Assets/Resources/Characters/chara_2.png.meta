@@ -2,11 +2,11 @@ fileFormatVersion: 2
 guid: 730393ead72d9634bb14d951d7dad0bd
 TextureImporter:
   fileIDToRecycleName:
-    21300000: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_0
-    21300002: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_1
-    21300004: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_2
-    21300006: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_3
-    21300008: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_4
+    21300000: chara_2_1
+    21300002: chara_2_2
+    21300004: chara_2_3
+    21300006: chara_2_4
+    21300008: chara_2_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -111,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_0
+      name: chara_2_1
       rect:
         serializedVersion: 2
         x: 47
@@ -119,7 +119,7 @@ TextureImporter:
         width: 204
         height: 275
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,15 +131,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_1
+      name: chara_2_2
       rect:
         serializedVersion: 2
-        x: 297
+        x: 299
         y: 66
         width: 233
         height: 281
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,7 +151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_2
+      name: chara_2_3
       rect:
         serializedVersion: 2
         x: 566
@@ -159,7 +159,7 @@ TextureImporter:
         width: 240
         height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,7 +171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_3
+      name: chara_2_4
       rect:
         serializedVersion: 2
         x: 862
@@ -179,7 +179,7 @@ TextureImporter:
         width: 213
         height: 291
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kisspng-sprite-animation-2d-computer-graphics-video-game-animation-5ad45680bc08f9.3821441815238652167702_4
+      name: chara_2_5
       rect:
         serializedVersion: 2
         x: 1147
@@ -199,7 +199,7 @@ TextureImporter:
         width: 206
         height: 285
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
