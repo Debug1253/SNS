@@ -1,13 +1,11 @@
 ﻿using System;
 
-namespace sns.InputEvent
+namespace sns.Control
 {
-    public class TouchInputEvent : IInputEvent
+    public class TouchControl : IControl
     {
-        // FIXME: 나중에 터치입력추가 예정
         public IObservable<float> OnHorizontal() { return null; }
         public IObservable<float> OnVertical() { return null; }
         public IObservable<bool> OnJump() { return null; }
-        public IObservable<bool> OnTap() { return null; }
     }
 }

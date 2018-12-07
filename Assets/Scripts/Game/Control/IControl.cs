@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace sns.InputEvent
+namespace sns.Control
 {
-    public interface IInputEvent
+    public interface IControl
     {
         IObservable<float> OnHorizontal();
         IObservable<float> OnVertical();
         IObservable<bool> OnJump();
-        IObservable<bool> OnTap();
     }
 }

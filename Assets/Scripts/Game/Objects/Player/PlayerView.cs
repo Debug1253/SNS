@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using sns.InputEvent;
+using sns.Control;
 
 using UniRx;
 
@@ -10,8 +10,24 @@ namespace sns.Player
 {
     public class PlayerView : MonoBehaviour
     {
-        public IObservable<float> OnHorizontal { get { return InputEventService.Instance.GetInputEvent().OnHorizontal(); } }
-        public IObservable<float> OnVertical { get { return InputEventService.Instance.GetInputEvent().OnVertical(); } }
-        public IObservable<bool> OnJump { get { return InputEventService.Instance.GetInputEvent().OnJump(); } }
+        public IObservable<float> OnHorizontal { get { return control.OnHorizontal(); } }
+        public IObservable<float> OnVertical { get { return control.OnVertical(); } }
+        public IObservable<bool> OnJump { get { return control.OnJump(); } }
+
+        private IControl control;
+
+        private void Awake()
+        {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+#if UNITY_ANDROID || UNITY_IOS
+            control = new TouchControl();
+#elif UNITY_STANDALONE || UNITY_EDITOR
+            control = new KeyBoardControl();
+#endif
+        }
     }
 }

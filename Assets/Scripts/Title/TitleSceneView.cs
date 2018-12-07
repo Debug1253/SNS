@@ -6,6 +6,6 @@ namespace sns.Title
 {
     public class TitleSceneView : MonoBehaviour
     {
-        public IObservable<bool> OnTap { get { return InputEventService.Instance.GetInputEvent().OnTap(); } }
+        public IObservable<bool> OnTap { get { return InputEventService.Instance.OnTap(); } }
     }
 }

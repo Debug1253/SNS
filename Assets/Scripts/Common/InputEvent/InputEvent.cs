@@ -1,4 +1,9 @@
-﻿namespace sns.InputEvent
+﻿using System;
+using UnityEngine;
+
+using UniRx;
+
+namespace sns.InputEvent
 {
     public class InputEventService
     {
@@ -15,25 +20,9 @@
             }
         }
 
-        private IInputEvent inputEvent;
-
-        private InputEventService()
+        public IObservable<bool> OnTap()
         {
-            Initialize();
-        }
-
-        private void Initialize()
-        {
-#if UNITY_ANDROID || UNITY_IOS
-            inputEvent = new TouchInputEvent();
-#elif UNITY_STANDALONE || UNITY_EDITOR
-            inputEvent = new KeyBoardInputEvent();
-#endif
-        }
-
-        public IInputEvent GetInputEvent()
-        {
-            return inputEvent;
+            return Observable.EveryUpdate().Select(_ => Input.GetMouseButtonUp(0)).DistinctUntilChanged();
         }
     }
 }
