@@ -61,10 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ExpectResources\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
+    <Compile Include="Assets\Scripts\Common\Chara\CharacterModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Chara\CharactersModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Data\DataModel.cs" />
+    <Compile Include="Assets\Scripts\Common\Data\DataService.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\IInputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\InputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\KeyBoardInputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\TouchInputEvent.cs" />
+    <Compile Include="Assets\Scripts\Common\PathModel.cs" />
     <Compile Include="Assets\Scripts\Common\Scene\SceneNameModel.cs" />
     <Compile Include="Assets\Scripts\Common\Scene\SceneService.cs" />
     <Compile Include="Assets\Scripts\Game\GamePresenter.cs" />
@@ -76,6 +81,10 @@
     <Compile Include="Assets\Scripts\Game\Objects\Player\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Player\PlayerPresenter.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Player\PlayerView.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\CharaSelect\CharaSelectDialogCharaView.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\CharaSelect\CharaSelectDialogPresenter.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\CharaSelect\CharaSelectDialogView.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\CharaSelect\CharaSelectModel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuPresenter.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuView.cs" />
     <Compile Include="Assets\Scripts\StageSelect\StagePresenter.cs" />
