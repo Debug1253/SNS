@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using sns.Control;
+using sns.Path;
 
 using UniRx;
 
@@ -24,9 +25,11 @@ namespace sns.Player
         private void Initialize()
         {
 #if UNITY_ANDROID || UNITY_IOS
-            control = new TouchControl();
+			control = new KeyBoardControl();
 #elif UNITY_STANDALONE || UNITY_EDITOR
-            control = new KeyBoardControl();
+            var prefab = Resources.Load(PathModel.TouchControlUIPrefabPath);
+            var go = Instantiate(prefab) as GameObject;
+            control = go.GetComponent<TouchControl>();
 #endif
         }
     }
