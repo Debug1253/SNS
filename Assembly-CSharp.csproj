@@ -65,13 +65,13 @@
     <Compile Include="Assets\Scripts\Common\Chara\CharactersModel.cs" />
     <Compile Include="Assets\Scripts\Common\Data\DataModel.cs" />
     <Compile Include="Assets\Scripts\Common\Data\DataService.cs" />
-    <Compile Include="Assets\Scripts\Common\InputEvent\IInputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\InputEvent\InputEvent.cs" />
-    <Compile Include="Assets\Scripts\Common\InputEvent\KeyBoardInputEvent.cs" />
-    <Compile Include="Assets\Scripts\Common\InputEvent\TouchInputEvent.cs" />
     <Compile Include="Assets\Scripts\Common\PathModel.cs" />
     <Compile Include="Assets\Scripts\Common\Scene\SceneNameModel.cs" />
     <Compile Include="Assets\Scripts\Common\Scene\SceneService.cs" />
+    <Compile Include="Assets\Scripts\Game\Control\IControl.cs" />
+    <Compile Include="Assets\Scripts\Game\Control\KeyBoardControl.cs" />
+    <Compile Include="Assets\Scripts\Game\Control\TouchControl.cs" />
     <Compile Include="Assets\Scripts\Game\GamePresenter.cs" />
     <Compile Include="Assets\Scripts\Game\GameView.cs" />
     <Compile Include="Assets\Scripts\Game\Objects\Camera\CameraPresenter.cs" />

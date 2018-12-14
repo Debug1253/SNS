@@ -8,6 +8,7 @@ namespace sns.Player
     {
         private float moveSpeed;
         private float jumpPower;
+        private Vector3 dir;
         private Rigidbody2D rigid;
         private bool isGround = false;
 
@@ -21,10 +22,9 @@ namespace sns.Player
 		// NOTE: 명령패턴을 쓸까 말까 고민 중
         public void Move(float amount)
         {
-            var dir = amount > 0 ? 0 : Mathf.PI * Mathf.Rad2Deg;
             var velocity = new Vector2(amount * moveSpeed, rigid.velocity.y);
             rigid.velocity = velocity;
-            rigid.transform.localEulerAngles = Vector3.up * dir;
+            SetDir(amount);
         }
 
         public void Jump()
@@ -39,6 +39,16 @@ namespace sns.Player
         public void Landing()
         {
             this.isGround = true;
+        }
+
+        private void SetDir(float amount)
+        {
+            if (amount > 0)
+                dir = Vector3.up * 0;
+            else if (amount < 0)
+                dir = Vector3.up * Mathf.PI * Mathf.Rad2Deg;
+
+            rigid.transform.localEulerAngles = dir;
         }
     }
 }

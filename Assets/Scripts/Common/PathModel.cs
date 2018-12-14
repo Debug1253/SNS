@@ -7,6 +7,9 @@ namespace sns.Path
         // 메인메뉴 관련
         public const string CharaSelectPrefabPath = "MainMenu/CharaSelectDialog";
 
+        // 터치 컨트롤러
+        public const string TouchControlUIPrefabPath = "Control/TouchControlUI";
+
         // FIXME: AssetBundle로 관리하자
         // 캐릭 아이콘 이미지
         static public string GetCharaPath(CharaType type)
