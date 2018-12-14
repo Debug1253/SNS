@@ -25,11 +25,12 @@ namespace sns.Player
         private void Initialize()
         {
 #if UNITY_ANDROID || UNITY_IOS
-			control = new KeyBoardControl();
+            // FIXME: 한번만 생성되게 수정해야함
+			var prefab = Resources.Load(PathModel.TouchControlUIPrefabPath);
+			var go = Instantiate(prefab) as GameObject;
+			control = go.GetComponent<TouchControl>();
 #elif UNITY_STANDALONE || UNITY_EDITOR
-            var prefab = Resources.Load(PathModel.TouchControlUIPrefabPath);
-            var go = Instantiate(prefab) as GameObject;
-            control = go.GetComponent<TouchControl>();
+            control = new KeyBoardControl();
 #endif
         }
     }
